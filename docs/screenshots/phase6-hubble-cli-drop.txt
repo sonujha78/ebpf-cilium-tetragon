@@ -1,0 +1,6 @@
+Sep  7 10:43:36.097: demo/frontend-7f8799d8ff-k8vjq:41876 (ID:10306) <> demo/database-6d7f45f585-pgt7g:5432 (ID:42303) Policy denied DROPPED (TCP Flags: SYN)
+Sep  7 10:43:37.142: demo/frontend-7f8799d8ff-k8vjq:41876 (ID:10306) <> demo/database-6d7f45f585-pgt7g:5432 (ID:42303) policy-verdict:none INGRESS DENIED (TCP Flags: SYN)
+Sep  7 10:43:37.142: demo/frontend-7f8799d8ff-k8vjq:41876 (ID:10306) <> demo/database-6d7f45f585-pgt7g:5432 (ID:42303) Policy denied DROPPED (TCP Flags: SYN)
+Sep  7 10:43:38.166: demo/frontend-7f8799d8ff-k8vjq:41876 (ID:10306) <> demo/database-6d7f45f585-pgt7g:5432 (ID:42303) policy-verdict:none INGRESS DENIED (TCP Flags: SYN)
+Sep  7 10:43:38.166: demo/frontend-7f8799d8ff-k8vjq:41876 (ID:10306) <> demo/database-6d7f45f585-pgt7g:5432 (ID:42303) Policy denied DROPPED (TCP Flags: SYN)
+EVENTS LOST: HUBBLE_RING_BUFFER CPU(0) 1
