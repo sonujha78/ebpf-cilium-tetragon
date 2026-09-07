@@ -1,0 +1,11 @@
+hubble:
+  metrics:
+    enabled:
+      - dns
+      - drop
+      - tcp
+      - flow
+      - port-distribution
+      - icmp
+      - "http"
+    enableOpenMetrics: true
