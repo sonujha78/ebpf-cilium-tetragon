@@ -12,7 +12,7 @@ and runtime security all happen at the Linux kernel level via eBPF.
 - [x] Phase 4: Hubble enabled
 - [x] Phase 5: Sample microservices deployed
 - [x] Phase 6: CiliumNetworkPolicy (L3/L4 + L7)
-- [ ] Phase 7: Hubble + Prometheus + Grafana dashboards
+- [x] Phase 7: Hubble + Prometheus + Grafana dashboards
 - [ ] Phase 8: Tetragon + TracingPolicies
 - [ ] Phase 9: Attack simulation
 - [ ] Phase 10: Performance comparison (sidecar vs eBPF)
