@@ -1,0 +1,11 @@
+Sep  7 10:52:26.220: demo/frontend-7f8799d8ff-k8vjq:35278 (ID:10306) -> demo/backend-5d8fcd74bb-vdmpr:8080 (ID:37268) http-request FORWARDED (HTTP/1.1 GET http://backend/get)
+Sep  7 10:52:26.220: demo/frontend-7f8799d8ff-k8vjq:35278 (ID:10306) <- demo/backend-5d8fcd74bb-vdmpr:8080 (ID:37268) http-response FORWARDED (HTTP/1.1 200 1ms (GET http://backend/get))
+Sep  7 10:52:26.358: demo/frontend-7f8799d8ff-k8vjq:35294 (ID:10306) -> demo/backend-5d8fcd74bb-vdmpr:8080 (ID:37268) http-request FORWARDED (HTTP/1.1 GET http://backend/status/500)
+Sep  7 10:52:26.438: demo/frontend-7f8799d8ff-k8vjq:35294 (ID:10306) <- demo/backend-5d8fcd74bb-vdmpr:8080 (ID:37268) http-response FORWARDED (HTTP/1.1 500 79ms (GET http://backend/status/500))
+Sep  7 10:53:54.157: demo/frontend-7f8799d8ff-k8vjq:59114 (ID:10306) -> demo/backend-5d8fcd74bb-vdmpr:8080 (ID:37268) http-request FORWARDED (HTTP/1.1 GET http://backend/get)
+Sep  7 10:53:54.159: demo/frontend-7f8799d8ff-k8vjq:59114 (ID:10306) <- demo/backend-5d8fcd74bb-vdmpr:8080 (ID:37268) http-response FORWARDED (HTTP/1.1 200 2ms (GET http://backend/get))
+Sep  7 10:53:54.279: demo/frontend-7f8799d8ff-k8vjq:59116 (ID:10306) -> demo/backend-5d8fcd74bb-vdmpr:8080 (ID:37268) http-request DROPPED (HTTP/1.1 GET http://backend/status/500)
+Sep  7 10:53:54.280: demo/frontend-7f8799d8ff-k8vjq:59116 (ID:10306) <- demo/backend-5d8fcd74bb-vdmpr:8080 (ID:37268) http-response FORWARDED (HTTP/1.1 403 0ms (GET http://backend/status/500))
+Sep  7 10:54:30.785: demo/frontend-7f8799d8ff-k8vjq:42920 (ID:10306) -> demo/backend-5d8fcd74bb-vdmpr:8080 (ID:37268) http-request DROPPED (HTTP/1.1 GET http://backend/status/500)
+Sep  7 10:54:30.786: demo/frontend-7f8799d8ff-k8vjq:42920 (ID:10306) <- demo/backend-5d8fcd74bb-vdmpr:8080 (ID:37268) http-response FORWARDED (HTTP/1.1 403 0ms (GET http://backend/status/500))
+EVENTS LOST: HUBBLE_RING_BUFFER CPU(0) 1

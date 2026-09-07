@@ -1,7 +1,7 @@
 apiVersion: cilium.io/v2
 kind: CiliumNetworkPolicy
 metadata:
-  name: allow-frontend-to-backend
+  name: l7-allow-get-block-status
   namespace: demo
 spec:
   endpointSelector:
@@ -15,3 +15,9 @@ spec:
         - ports:
             - port: "8080"
               protocol: TCP
+          rules:
+            http:
+              - method: "GET"
+                path: "/get"
+              - method: "GET"
+                path: "/headers"
