@@ -1,0 +1,17 @@
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: allow-backend-to-database
+  namespace: demo
+spec:
+  endpointSelector:
+    matchLabels:
+      app: database
+  ingress:
+    - fromEndpoints:
+        - matchLabels:
+            app: backend
+      toPorts:
+        - ports:
+            - port: "5432"
+              protocol: TCP
