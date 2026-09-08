@@ -14,10 +14,11 @@ and runtime security all happen at the Linux kernel level via eBPF.
 - [x] Phase 6: CiliumNetworkPolicy (L3/L4 + L7)
 - [x] Phase 7: Hubble + Prometheus + Grafana dashboards
 - [x] Phase 8: Tetragon + TracingPolicies
-- [ ] Phase 9: Attack simulation
+- [x] Phase 9: Attack simulation
 - [ ] Phase 10: Performance comparison (sidecar vs eBPF)
 - [ ] Phase 11: Documentation
 
 ## Notes
 Detailed notes for each phase are in `docs/notes-phaseN-*.md`.
 Hubble/Tetragon flow proofs and screenshots are in `docs/screenshots/`.
+Attack simulation script: `scripts/attack-simulation.sh`.
