@@ -1,0 +1,23 @@
+Tetragon TracingPolicy - block-sensitive-file-access
+Kprobe hook: security_file_permission (LSM hook)
+Target: /etc/shadow
+Action: Sigkill
+
+## Test 1 (non-root user 'curl_user', uid 100)
+Command: kubectl exec -n demo deploy/database -- sh -c "cat /etc/shadow; echo EXIT_CODE:$?"
+Result: EXIT_CODE:1, "Permission denied"
+Note: Blocked by standard Linux filesystem permissions before Tetragon's
+kprobe could even trigger - not a valid enforcement test.
+
+## Test 2 (root user, uid 0 - patched via securityContext.runAsUser=0)
+Command: kubectl exec -n demo deploy/database -- sh -c "cat /etc/shadow; echo EXIT_CODE:$?"
+Result:
+    Killed
+    EXIT_CODE:137
+
+Exit code 137 = 128 + 9 (SIGKILL). The process was killed by the kernel
+before it could read or print any content from /etc/shadow, confirming
+Tetragon's eBPF-based kprobe on security_file_permission enforced the
+block at the kernel level - with zero modification to the application
+or container image. Even a root user inside the container could not
+bypass this restriction.
