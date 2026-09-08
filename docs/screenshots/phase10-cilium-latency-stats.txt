@@ -1,0 +1,4 @@
+Requests: 50
+Min:      2.03 ms
+Max:      7.97 ms
+Average:  3.40 ms
