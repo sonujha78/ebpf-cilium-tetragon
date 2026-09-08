@@ -1,11 +1,11 @@
 hubble:
   metrics:
     enabled:
-      - dns
-      - drop
-      - tcp
-      - flow
-      - port-distribution
-      - icmp
+      - "dns:query;ignoreAAAA"
+      - "drop"
+      - "tcp"
+      - "flow:sourceContext=workload-name|reserved-identity;destinationContext=workload-name|reserved-identity"
+      - "port-distribution"
+      - "icmp"
       - "http"
     enableOpenMetrics: true
