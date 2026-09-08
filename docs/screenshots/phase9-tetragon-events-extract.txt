@@ -1,0 +1,24 @@
+💥 exit    ebpf-cluster-worker /usr/bin/git "for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)" 0
+💥 exit    ebpf-cluster-worker /usr/lib/systemd/systemd  0
+💥 exit    ebpf-cluster-worker /usr/bin/sleep 2 0
+🚀 process ebpf-cluster-worker /usr/local/bin/kubectl "exec -n demo deploy/database -- sh -c \"echo ATTACKER_SHELL_ACTIVE; id; hostname\""
+💥 exit    ebpf-cluster-worker /usr/bin/sleep 1 0
+🚀 process ebpf-cluster-worker /usr/bin/sed "-n s/^cpu\\s//p /proc/stat"
+💥 exit    ebpf-cluster-worker /usr/bin/sed "-n s/^cpu\\s//p /proc/stat" 0
+--
+💥 exit    ebpf-cluster-worker /dev/fd/5 init 0
+❓ syscall ebpf-cluster-worker /usr/local/sbin/runc __x64_sys_execve
+💥 exit    ebpf-cluster-worker /usr/local/sbin/runc "--root /run/containerd/runc/k8s.io --log /run/containerd/io.containerd.runtime.v2.task/k8s.io/63854d1b53bc4c569a7512cf11e14e3ecb211282cd095b74700c5ca0766f107e/log.json --log-format json --systemd-cgroup exec --process /tmp/runc-process1177283209 --detach --pid-file /run/containerd/io.containerd.runtime.v2.task/k8s.io/63854d1b53bc4c569a7512cf11e14e3ecb211282cd095b74700c5ca0766f107e/a9ed69621b7c96d4e7382b68cfc9a2a3e84bf7f47c2462eeb6c971bc9a8e4f1a.pid 63854d1b53bc4c569a7512cf11e14e3ecb211282cd095b74700c5ca0766f107e" 0
+💥 exit    ebpf-cluster-worker /usr/local/bin/kubectl "exec -n demo deploy/database -- sh -c \"echo ATTACKER_SHELL_ACTIVE; id; hostname\"" 0
+🚀 process ebpf-cluster-worker /usr/local/bin/kubectl "exec -n demo deploy/database -- sh -c \"cat /etc/shadow; echo EXIT_CODE:$?\""
+🚀 process ebpf-cluster-worker /usr/local/sbin/runc "--root /run/containerd/runc/k8s.io --log /run/containerd/io.containerd.runtime.v2.task/k8s.io/63854d1b53bc4c569a7512cf11e14e3ecb211282cd095b74700c5ca0766f107e/log.json --log-format json --systemd-cgroup exec --process /tmp/runc-process62679965 --detach --pid-file /run/containerd/io.containerd.runtime.v2.task/k8s.io/63854d1b53bc4c569a7512cf11e14e3ecb211282cd095b74700c5ca0766f107e/747ff601d9ff4664736fad26d742c9b64f41443f297d08cfa91db586b4399f73.pid 63854d1b53bc4c569a7512cf11e14e3ecb211282cd095b74700c5ca0766f107e"
+🚀 process ebpf-cluster-worker /proc/self/exe init
+🚀 process ebpf-cluster-worker /dev/fd/5 init
+--
+💥 exit    ebpf-cluster-worker /dev/fd/5 init 0
+❓ syscall ebpf-cluster-worker /usr/local/sbin/runc __x64_sys_execve
+💥 exit    ebpf-cluster-worker /usr/local/sbin/runc "--root /run/containerd/runc/k8s.io --log /run/containerd/io.containerd.runtime.v2.task/k8s.io/63854d1b53bc4c569a7512cf11e14e3ecb211282cd095b74700c5ca0766f107e/log.json --log-format json --systemd-cgroup exec --process /tmp/runc-process62679965 --detach --pid-file /run/containerd/io.containerd.runtime.v2.task/k8s.io/63854d1b53bc4c569a7512cf11e14e3ecb211282cd095b74700c5ca0766f107e/747ff601d9ff4664736fad26d742c9b64f41443f297d08cfa91db586b4399f73.pid 63854d1b53bc4c569a7512cf11e14e3ecb211282cd095b74700c5ca0766f107e" 0
+💥 exit    ebpf-cluster-worker /usr/local/bin/kubectl "exec -n demo deploy/database -- sh -c \"cat /etc/shadow; echo EXIT_CODE:$?\"" 0
+🚀 process ebpf-cluster-worker /usr/bin/sleep 3
+❓ syscall ebpf-cluster-worker /usr/lib/systemd/systemd __x64_sys_execve
+🚀 process ebpf-cluster-worker /bin/sh "-c \"which ps\""
